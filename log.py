@@ -6,11 +6,13 @@ import os
 import re
 import sys
 
+subl = "/usr/local/bin/subl"
+
 if len(sys.argv) == 1:
     pass
 elif len(sys.argv) == 2 and sys.argv[1] == "edit":
-        os.system("subl /Users/kevin/projects/logmd")
-        os.system("subl /Users/kevin/projects/logmd/log.py")
+        os.system(f"{subl} /Users/kevin/projects/logmd")
+        os.system(f"{subl} /Users/kevin/projects/logmd/log.py")
         exit(0)
 else:
     print("Usage: lg [edit]")
@@ -72,5 +74,5 @@ with open(logfile, 'r+') as file:
     file.seek(0)
     file.write("".join(content))
   
-os.system(f"subl /Users/kevin/Dropbox/caret/")
-os.system(f"subl {logfile}:{open_location[0]}:{open_location[1]}")
+os.system(f"{subl} /Users/kevin/Dropbox/caret/")
+os.system(f"{subl} {logfile}:{open_location[0]}:{open_location[1]}")
